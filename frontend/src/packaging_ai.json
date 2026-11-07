@@ -1,0 +1,142 @@
+{
+  "address": "GWwi3zRyWXLLgKU2zZrtwf2GQVVKr1LxRA2HpHGkunS3",
+  "metadata": {
+    "name": "packaging_ai",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "initialize_access",
+      "discriminator": [
+        113,
+        88,
+        159,
+        104,
+        170,
+        0,
+        97,
+        88
+      ],
+      "accounts": [
+        {
+          "name": "access",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "log_session",
+      "discriminator": [
+        70,
+        18,
+        194,
+        193,
+        197,
+        105,
+        35,
+        147
+      ],
+      "accounts": [
+        {
+          "name": "session",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "user",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "problem",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Access",
+      "discriminator": [
+        117,
+        154,
+        108,
+        210,
+        202,
+        83,
+        96,
+        222
+      ]
+    },
+    {
+      "name": "Session",
+      "discriminator": [
+        243,
+        81,
+        72,
+        115,
+        214,
+        188,
+        72,
+        144
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "Access",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "active",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Session",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "user",
+            "type": "pubkey"
+          },
+          {
+            "name": "problem",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    }
+  ]
+}
